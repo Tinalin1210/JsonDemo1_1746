@@ -70,7 +70,7 @@ namespace JsonDemo1_1746
 
             // 使用 JsonConvert.SerializeObject 方法將資料物件轉換為 JSON 字符串，並以縮排格式輸出。這樣可以使輸出的 JSON 格式更加可讀。
             //Formatting.Indented 是讓 JSON 產生後有「縮排」和「換行」
-            string json = JsonConvert.SerializeObject(jsonData, (Newtonsoft.Json.Formatting)System.Xml.Formatting.Indented);
+            string json = JsonConvert.SerializeObject(jsonData, (Newtonsoft.Json.Formatting)Newtonsoft.Json.Formatting.Indented);
 
             // 輸出序列化後的 JSON 字串
             Console.WriteLine(json);
