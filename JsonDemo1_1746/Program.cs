@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Xml;
-using Newtonsoft.Json; // 確保已經引入 Newtonsoft.Json
+﻿using System; //基本的類型和功能
+using System.Collections.Generic; //泛型集合類型，例如 List<T>
+using System.Xml;  //用於處理 XML 格式的資料。
+using Newtonsoft.Json; // 用於處理 JSON 格式的資料
 //Board: 代表公告版，每個 Board 有一個名稱（BoardName）和一個公告列表（Notices）。
 //Notice: 代表每條公告，包含公告的ID、日期、標題和發布人。
 //LoginInfo: 儲存登錄資訊，包含用戶名稱、今天的簽到時間和上次登錄時間。
@@ -12,6 +12,7 @@ namespace JsonDemo1_1746
     {
         static void Main(string[] args)
         {
+            //boards 是一個 List<Board>，存放多個公告版的資料，每個 Board 物件都包含一組 Notices。
             var boards = new List<Board>
             {
                 new Board
@@ -44,14 +45,14 @@ namespace JsonDemo1_1746
                 new Board { BoardName = "BU1 宣導", Notices = new List<Notice>() }
             };
 
-            var loginInfo = new LoginInfo
+            var loginInfo = new LoginInfo  //存放登入資訊，方便查詢。
             {
                 UserName = "林子晴", // 登錄的用戶名稱
                 TodayLogin = "08:30 ~ 09:33", // 今天簽到時間
                 LastLogin = "查無紀錄" // 上次登錄紀錄
             };
 
-            var leave = new Leave
+            var leave = new Leave  // 記錄請假資訊，如總時數、已排/未排時數等。
             {
                 UserName = "林子晴",
                 Hours = 52,   //總時數
